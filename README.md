@@ -73,23 +73,8 @@ c) Additional filtering by user first and second name, email address, ID
 d) Additional sorting (ID, first and second name, email address)
 - Related features/pages: UsersManagementPage, Zustand store and slices
 
-e) 
-
-f) Changing the color of the navigation during scrolling
-- Related function: scrollChangeColor()
-
-g) Setting form data as a localStorage keys
-- Related functions: saveFormData() [financing, delivery date, user name] and renderCars() [accessories]
-
-h) Loading and assigning localStorage values to HTML elements
-- Related functions: loadFormData() and toggleSPA()
-
-i) Adding and removing accessories associated with the selected car. Accessories are stored in the browser's localStorage
-- Related functions: addAccessory() and removeAccessory()
-
-j) Displaying listings with cars on the page based on the data contained in the cars.json file
-- Related functions: renderCars()
-
+e) Fetching data and displaying it in tabular form
+- Related features/pages: custom hook useApi, UsersManagementPage
 
 ## Technologies
 - React: dynamic functionality and interaction
@@ -108,3 +93,4 @@ j) Displaying listings with cars on the page based on the data contained in the 
 ## Additional comments
 - Jobs directory button is functionless. JobsDirectoryPage is an optional feature to include in future development of this project.
 - MUI bundle size was reduced by using tree-shaking technique and by using babel-plugin-import (the .babelrc.js file was created, configured and used in the project)
+- Thanks to using slices instead of one store consisted of all states, the modularity and readability were achieved
