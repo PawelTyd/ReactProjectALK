@@ -11,7 +11,7 @@ git clone https://github.com/PawelTyd/ReactProjectALK.git
 ```
 2. Navigate to the project directory:
 ```bash
-cd ReactProjectALK/my-vite-project
+cd ReactProjectALK
 ```
 3. Install dependencies using npm command:
 ```bash
@@ -61,18 +61,19 @@ The user views and manages user details in a tabulated format.
 
 ## Features and Functions
 
-a) Form validation 
-- Related functions: toggleSPA() and returnToHomePage()
+a) Form state management
+- Related features/pages: React-Hook-Form, LoginPage, ResetPasswordPage, RegisterPage
 
 b) Validating user input to ensure all necessary fields (email, password, confirmPassword) are filled during registration/login process. The length of characters, the format of the email, the compatibility of passwords have been checked
-- Related function: validation()
+- Related features/pages: Yup library, LoginPage, ResetPasswordPage, RegisterPage
 
-c) Additional filtering by car name using the "filter' method
-- Related function: filterCarName()
+c) Additional filtering by user first and second name, email address, ID
+- Related features/pages: UsersManagementPage, Zustand store and slices
 
-d) Using flatpickr library to handle calendar and delivery date selection
+d) Additional sorting (ID, first and second name, email address)
+- Related features/pages: UsersManagementPage, Zustand store and slices
 
-e) Using scrollIntoView method to include more fluent and smooth scrolling animation
+e) 
 
 f) Changing the color of the navigation during scrolling
 - Related function: scrollChangeColor()
@@ -106,3 +107,4 @@ j) Displaying listings with cars on the page based on the data contained in the 
 
 ## Additional comments
 - Jobs directory button is functionless. JobsDirectoryPage is an optional feature to include in future development of this project.
+- MUI bundle size was reduced by using tree-shaking technique and by using babel-plugin-import (the .babelrc.js file was created, configured and used in the project)
