@@ -63,7 +63,7 @@ export const Row = (props) => {
         <TableCell align="center">{row.email}</TableCell>
       </StyledTableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <StyledTableCell colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <StyledBox>
               <Typography variant="h6" gutterBottom component="div">
@@ -82,7 +82,7 @@ export const Row = (props) => {
               </Table>
             </StyledBox>
           </Collapse>
-        </TableCell>
+        </StyledTableCell>
       </TableRow>
     </>
   );
@@ -117,5 +117,12 @@ const StyledBox = styled(Box)(({ theme }) =>
 const StyledAvatar = styled(Avatar)(({ theme }) =>
   theme.unstable_sx({
     bgcolor: theme.palette.primary.main,
+  })
+);
+
+const StyledTableCell = styled(TableCell)(({ theme }) =>
+  theme.unstable_sx({
+    pb: 0,
+    pt: 0,
   })
 );
