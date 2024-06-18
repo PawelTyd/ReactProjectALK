@@ -61,10 +61,10 @@ The user views and manages user details in a tabulated format.
 
 ## Features and Functions
 
-a) Simulating the SPA approach by toggling the class "hidden" and the property "display"
+a) Form validation 
 - Related functions: toggleSPA() and returnToHomePage()
 
-b) Validating user input to ensure all necessary fields (financing, name, date of delivery, accessories) are filled before purchase
+b) Validating user input to ensure all necessary fields (email, password, confirmPassword) are filled during registration/login process. The length of characters, the format of the email, the compatibility of passwords have been checked
 - Related function: validation()
 
 c) Additional filtering by car name using the "filter' method
@@ -89,12 +89,6 @@ i) Adding and removing accessories associated with the selected car. Accessories
 j) Displaying listings with cars on the page based on the data contained in the cars.json file
 - Related functions: renderCars()
 
-## Main files
-- index.html: There is only one HTML file. The other "subpages" are visible when toggling the class "hidden"
-- app.js: JavaScript file containing code responsible for application logic
-- mainPageStyles.css: A file containing the styles that apply to most HTML elements
-- formStyles.css: A file containing the styles relating to the HTML form and summary page
-- cars.json: JSON file containing data about car offers
 
 ## Technologies
 - React: dynamic functionality and interaction
@@ -103,6 +97,7 @@ j) Displaying listings with cars on the page based on the data contained in the 
 - Zustand: state management library for the React
 - Yup: validation library for the React
 - React-Hook-Form: performant, flexible and extensible forms with easy-to-use validation
+- Vite: frontend tool for building web applications
 - LottieFiles: provides Lottie animations
 - useEffect hook: to perform side effects in your components
 - useState hook: to track state in a function component
