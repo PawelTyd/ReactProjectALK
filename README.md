@@ -1,8 +1,113 @@
-# React + Vite
+# ReactProjectALK
+ReactProjectALK is a web application that allows the user to register a new account, to have access to authorized content through a login process and also to manage other users' accounts.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+To run the application locally, follow these steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository:
+```bash
+git clone https://github.com/PawelTyd/ReactProjectALK.git
+```
+2. Navigate to the project directory:
+```bash
+cd ReactProjectALK/my-vite-project
+```
+3. Install dependencies using npm command:
+```bash
+npm install
+```
+4. Start the project using npm command:
+```bash
+npm run dev
+```
+
+## Pages descriptions and Happy Path
+
+The project consists of 7 pages:
+
+- HomePage: The very first page of the project. It's the starting point for every new user. To proceed the user should click the button "Let's start"
+- LoginPage: The second page that gives access to the dashboard only to authorized users. Relevant message is displayed after wrong login attempt. From this page the user has access to other optional pages like RegisterPage and ResetPasswrodPage
+- ResetPasswordPage: Optional page which purpose is resetting password and mocking of sending emails with reset links. If the provided email is the same as during registration, the relevant message will appear (error or success).
+- RegisterPage: The page that allows user to create new account/to register. If the registration process is correct, the animation will appear.
+- RegisterAnimation: It's an animation, which is displayed only if the registration process is correct. The animation only lasts for 3,5s and after that the user will be redirected to LoginPage
+- DashboardPage: The next page, that is only available for logged-in users. It allows the user to pick the module: User Management and Jobs Directory. More about JobsDirectoryPage in the last paragraph (Additional Comments)
+- UsersManagementPage: The last page, that displays user details in a tabulated format. This screen is essential for admin users to manage account details efficiently
+
+Happy Path:
+1) HomePage:
+The user lands on the HomePage.
+The user clicks the "Let's start" button to proceed.
+
+2) LoginPage:
+The user is redirected to the LoginPage.
+The user enters correct login credentials.
+The user successfully logs in and gains access to the dashboard.
+
+3) RegisterPage (if the user is not registered):
+The user navigates to the RegisterPage.
+The user fills out the registration form with valid details.
+Upon successful registration, the RegisterAnimation is displayed.
+After 3.5 seconds, the user is redirected to the LoginPage.
+
+4) LoginPage (after registration):
+The user enters the newly created credentials.
+The user successfully logs in and gains access to the dashboard.
+
+5) UsersManagementPage:
+The user selects the "User Management" module.
+The user is redirected to the UsersManagementPage.
+The user views and manages user details in a tabulated format.
+
+## Features and Functions
+
+a) Simulating the SPA approach by toggling the class "hidden" and the property "display"
+- Related functions: toggleSPA() and returnToHomePage()
+
+b) Validating user input to ensure all necessary fields (financing, name, date of delivery, accessories) are filled before purchase
+- Related function: validation()
+
+c) Additional filtering by car name using the "filter' method
+- Related function: filterCarName()
+
+d) Using flatpickr library to handle calendar and delivery date selection
+
+e) Using scrollIntoView method to include more fluent and smooth scrolling animation
+
+f) Changing the color of the navigation during scrolling
+- Related function: scrollChangeColor()
+
+g) Setting form data as a localStorage keys
+- Related functions: saveFormData() [financing, delivery date, user name] and renderCars() [accessories]
+
+h) Loading and assigning localStorage values to HTML elements
+- Related functions: loadFormData() and toggleSPA()
+
+i) Adding and removing accessories associated with the selected car. Accessories are stored in the browser's localStorage
+- Related functions: addAccessory() and removeAccessory()
+
+j) Displaying listings with cars on the page based on the data contained in the cars.json file
+- Related functions: renderCars()
+
+## Main files
+- index.html: There is only one HTML file. The other "subpages" are visible when toggling the class "hidden"
+- app.js: JavaScript file containing code responsible for application logic
+- mainPageStyles.css: A file containing the styles that apply to most HTML elements
+- formStyles.css: A file containing the styles relating to the HTML form and summary page
+- cars.json: JSON file containing data about car offers
+
+## Technologies
+- React: dynamic functionality and interaction
+- MUI: provides a simple, customizable, and accessible library of React components
+- React-Router-Dom: routing library for the React
+- Zustand: state management library for the React
+- Yup: validation library for the React
+- React-Hook-Form: performant, flexible and extensible forms with easy-to-use validation
+- LottieFiles: provides Lottie animations
+- useEffect hook: to perform side effects in your components
+- useState hook: to track state in a function component
+
+
+
+## Additional comments
+- Jobs directory button is functionless. JobsDirectoryPage is an optional feature to include in future development of this project.
